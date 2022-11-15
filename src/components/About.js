@@ -2,16 +2,15 @@ import React from 'react'
 
 export default function About ( props ) {
   const myStyle = {
-    color: props.mode === "dark" ? "white" : "black",
-    backgroundColor: props.mode === "dark" ? "#042743" : "white"
+    color: props.mode === "dark" ? "white" : "042743",
+    backgroundColor: props.mode === "dark" ? "rgb(36,74, 104)" : "white"
   }
 
-
   return (
-    <div className="container" style={ myStyle }>
-      <h1 className="my-2">About us</h1>
+    <div className="container">
+      <h1 className="my-2" style={ { color: props.mode === "dark" ? "white" : "042743" } }>About us</h1>
       <div className="accordion" id="accordionExample" style={ myStyle }>
-        <div className="accordion-item">
+        <div className="accordion-item" >
           <h2 className="accordion-header" id="headingOne">
             <button
               className="accordion-button"
@@ -22,7 +21,7 @@ export default function About ( props ) {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong>Enalyze your text</strong>
             </button>
           </h2>
           <div
@@ -38,7 +37,7 @@ export default function About ( props ) {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
+              about any HTML can go wit
               though the transition does limit overflow.
             </div>
           </div>
@@ -54,7 +53,7 @@ export default function About ( props ) {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>Free to use</strong>
             </button>
           </h2>
           <div
@@ -70,7 +69,7 @@ export default function About ( props ) {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
+              about any HTML can go within
               though the transition does limit overflow.
             </div>
           </div>
@@ -86,7 +85,7 @@ export default function About ( props ) {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <strong>Browser compitable</strong>
             </button>
           </h2>
           <div
@@ -102,7 +101,7 @@ export default function About ( props ) {
               the overall appearance, as well as the showing and hiding via CSS
               transitions. You can modify any of this with custom CSS or
               overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
+              about any HTML can go within t
               though the transition does limit overflow.
             </div>
           </div>

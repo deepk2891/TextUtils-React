@@ -53,24 +53,25 @@ export default function TextForm ( props ) {
   return (
     <>
       <div className="container">
-        <h1>{ props.heading }</h1>
-        <div className="mb-3">
-          <textarea className="form-control" value={ text } onChange={ handleOnChange } style={ { backgroundColor: props.mode === "dark" ? "grey" : "white" } } id="myBox" rows="8">
+        <h1 className="my-2">{ props.heading }</h1>
+        <div className="mb-4">
+          <textarea className="form-control" value={ text } onChange={ handleOnChange }
+            style={ { backgroundColor: props.mode === "dark" ? "grey" : "white" } } id="myBox" rows="8">
           </textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={ handleUpClick }>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ handleUpClick }>
           Convert To UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={ handleLoClick }>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ handleLoClick }>
           Convert To LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={ handleClearClick }>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ handleClearClick }>
           Clear
         </button>
-        <button className="btn btn-primary mx-2" onClick={ handleCopy }>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ handleCopy }>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={ handleExtraSpaces }>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={ handleExtraSpaces }>
           Remove extra spaces
         </button>
       </div>
@@ -78,8 +79,8 @@ export default function TextForm ( props ) {
         <h2>
           your text summery
         </h2>
-        <p>{ text.split( " " ).length } words and { text.length } Characters</p>
-        <p>{ 0.008 * text.split( "" ).length } reading time</p>
+        <p>{ text.split( /\s+/ ).filter( ( element ) => { return element.length !== 0 } ).length } words and { text.length } Characters</p>
+        <p>{ 0.008 * text.split( "" ).filter( ( element ) => { return element.length !== 0 } ).length } reading time</p>
         <h2>Preview</h2>
         <p>{ text }</p>
       </div>
